@@ -13,11 +13,7 @@ import { VACATIONS } from '../vacationsArray'
     </ul>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <a class="btn btn-success" [routerLink]="['new']">New Vacation</a>
-  </div>
-</div>`,
+`,
   styles: []
 })
 export class VacationsListComponent implements OnInit {

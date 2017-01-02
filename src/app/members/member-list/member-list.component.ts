@@ -13,11 +13,7 @@ import { MEMBERS } from '../membersArray'
     </ul>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <a class="btn btn-success" [routerLink]="['new']">New Member</a>
-  </div>
-</div>
+
 `,
   styles:[]
 })
