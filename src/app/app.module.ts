@@ -19,7 +19,13 @@ import { VacationItemComponent } from './vacations/vacations-list/vacation-item.
 import { PhotoServiceService } from './photos/photo-service.service';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoItemComponent } from './photos/photo-list/photo-item.component';
-import { PhotoEditComponent } from './photos/photo-edit/photo-edit.component'
+import { PhotoEditComponent } from './photos/photo-edit/photo-edit.component';
+import { CruiseComponent } from './cruise/cruise.component';
+import { LakePowellComponent } from './lake-powell/lake-powell.component';
+import { CaliforniaComponent } from './california/california.component';
+import { EventListComponent } from './events/event-list/event-list.component';
+import { EventItemComponent } from './events/event-list/event-item.component';
+import { BlakeAprilWeddingComponent } from './blake-april-wedding/blake-april-wedding.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { PhotoEditComponent } from './photos/photo-edit/photo-edit.component'
     VacationItemComponent,
     PhotoListComponent,
     PhotoItemComponent,
-    PhotoEditComponent
+    PhotoEditComponent,
+    CruiseComponent,
+    LakePowellComponent,
+    CaliforniaComponent,
+    EventListComponent,
+    EventItemComponent,
+    BlakeAprilWeddingComponent
   ],
   imports: [
     BrowserModule,
