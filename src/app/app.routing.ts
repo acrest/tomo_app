@@ -7,10 +7,11 @@ import { EventsComponent } from './events/events.component';
 import { HomeComponent } from './home/home.component';
 import { PhotoEditComponent } from "./photos/photo-edit/photo-edit.component";
 import {PhotoListComponent} from "./photos/photo-list/photo-list.component";
-import {CruiseComponent} from "./cruise/cruise.component";
 import {LakePowellComponent} from "./lake-powell/lake-powell.component";
 import {CaliforniaComponent} from "./california/california.component";
 import {BlakeAprilWeddingComponent} from './blake-april-wedding/blake-april-wedding.component';
+import { CRUISE_ROUTES } from "./cruise/cruise.routes"
+import {CruiseComponent} from "./cruise/cruise.component";
 
 const APP_ROUTES: Routes = [
   {path: 'members', component: MembersComponent},
@@ -20,7 +21,7 @@ const APP_ROUTES: Routes = [
   {path: 'home', component: HomeComponent },
   {path: '', component: HomeComponent },
   { path: 'photos/new', component: PhotoEditComponent },
-  {path: 'vacations/cruise', component: CruiseComponent},
+  {path: 'vacations/cruise', component: CruiseComponent, children: CRUISE_ROUTES},
   {path: 'vacations/lake-powell', component: LakePowellComponent},
   {path: 'vacations/california', component: CaliforniaComponent},
   {path: 'events/b-a-wedding', component: BlakeAprilWeddingComponent}

@@ -25,7 +25,14 @@ import { LakePowellComponent } from './lake-powell/lake-powell.component';
 import { CaliforniaComponent } from './california/california.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventItemComponent } from './events/event-list/event-item.component';
-import { BlakeAprilWeddingComponent } from './blake-april-wedding/blake-april-wedding.component'
+import { BlakeAprilWeddingComponent } from './blake-april-wedding/blake-april-wedding.component';
+import { CruiseListComponent } from './cruise/cruise-list/cruise-list.component';
+import { DisplayComponent } from './cruise/display/display.component';
+import { CruiseItemComponent } from './cruise/cruise-list/cruise-item.component';
+import { CruiseDetailComponent } from './cruise/cruise-detail/cruise-detail.component';
+import { CruiseStartComponent } from './cruise/cruise-start.component';
+import { CruiseEditComponent } from './cruise/cruise-edit/cruise-edit.component'
+import {CruiseService} from "./cruise/cruise.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +56,13 @@ import { BlakeAprilWeddingComponent } from './blake-april-wedding/blake-april-we
     CaliforniaComponent,
     EventListComponent,
     EventItemComponent,
-    BlakeAprilWeddingComponent
+    BlakeAprilWeddingComponent,
+    CruiseListComponent,
+    DisplayComponent,
+    CruiseItemComponent,
+    CruiseDetailComponent,
+    CruiseStartComponent,
+    CruiseEditComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +71,7 @@ import { BlakeAprilWeddingComponent } from './blake-april-wedding/blake-april-we
     HttpModule,
     routing
   ],
-  providers: [PhotoServiceService],
+  providers: [PhotoServiceService, CruiseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
