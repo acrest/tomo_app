@@ -9,7 +9,9 @@ export class CruiseService {
   cruiseChanged = new EventEmitter<Cruise[]>();
 
   private cruises: Cruise[] = [
-    new Cruise('Family Picture', 'This was taken on Christmas Night.  We all got dressed up and went to dinner.', 'https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e35/15801922_392847301058964_4507137950277959680_n.jpg?ig_cache_key=MTQxOTI5MzUxNjAyMjc4OTgzMg%3D%3D.2')
+    new Cruise('Family Picture', 'This was taken on Second Night of the Cruise.  We all got dressed up and went to dinner.', 'https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e35/15801922_392847301058964_4507137950277959680_n.jpg?ig_cache_key=MTQxOTI5MzUxNjAyMjc4OTgzMg%3D%3D.2'),
+    new Cruise('Swimming with the Dolphins', 'Everyone had a blast swimming with the dolphins.  Especially Summer and Eden!', 'https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e35/15803090_386813848333416_4477694154167549952_n.jpg?ig_cache_key=MTQxOTI1MTc3Mjg2NjU2MjUxNw%3D%3D.2')
+
   ];
 
   constructor(private http: Http) {}
