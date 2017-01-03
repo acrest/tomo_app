@@ -21,12 +21,12 @@ export class PhotoListComponent implements OnInit {
       (photos: Photo[])=> this.photos = photos
     );
   }
-  submitChanges(){
-    this.photoService.storeData().subscribe(
-      data => console.log(data),
-      error => console.error(error)
-    );
-  }
+  // submitChanges(){
+  //   this.photoService.storeData().subscribe(
+  //     data => console.log(data),
+  //     error => console.error(error)
+  //   );
+  // }
   getPhotos(){
     this.photoService.fetchData();
   }
