@@ -1,12 +1,11 @@
 
-<div style="float: top; overflow: hidden">
-  <div class="info" style="width: 200px; float: left; overflow: hidden">
+<a [routerLink]="[photoID]" class="list-group-item clearfix" routerLinkActive="active">
+  <div class="pull-left">
     <h4 class="list-group-item-heading">{{photo.name}}</h4>
-    <p class="list-group-item-text">{{photo.description}}</p>
   </div>
-  <div class="picture"style=" float: left; overflow: hidden">
+  <span class="pull-right">
     <img class="img-responsive"
          src="{{photo.imagePath}}"
-         style="max-height: 175px;"/>
-  </div>
-</div>
+         style="max-height: 100px;"/>
+  </span>
+</a>
