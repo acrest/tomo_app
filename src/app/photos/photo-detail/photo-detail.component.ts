@@ -29,12 +29,12 @@ export class PhotoDetailComponent implements OnInit, OnDestroy {
   }
 
   onEdit() {
-    this.router.navigate(['vacations/cruise', this.photoIndex, 'edit']);
+    this.router.navigate(['/photos', this.photoIndex, 'edit']);
   }
 
   onDelete() {
     this.cruiseService.deletePhoto(this.selectedPhoto);
-    this.router.navigate(['vacations/cruise']);
+    this.router.navigate(['/photos']);
   }
 
   ngOnDestroy() {

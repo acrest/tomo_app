@@ -3,6 +3,7 @@ import { Http, Headers, Response } from "@angular/http";
 import 'rxjs/Rx'
 
 import { Photo } from "./photo"
+import {Observable} from "rxjs";
 
 @Injectable()
 export class PhotoServiceService {
@@ -24,10 +25,12 @@ export class PhotoServiceService {
   }
 
   addPhoto(photo: Photo) {
+    this.http.put('https://family-project-4f904.firebaseio.com/photos/'+ this.photos.length +'.json',JSON.stringify(photo)).toPromise();
     this.photos.push(photo);
   }
 
   editPhoto(oldPhoto: Photo, newPhoto: Photo) {
+    this.http.patch('https://family-project-4f904.firebaseio.com/photos/'+this.photos.indexOf(oldPhoto)+'/.json',JSON.stringify(newPhoto)).toPromise();
     this.photos[this.photos.indexOf(oldPhoto)] = newPhoto;
   }
 
@@ -37,17 +40,16 @@ export class PhotoServiceService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-
-    return this.http.put('https://family-project-4f904.firebaseio.com/photos.json', body, {headers: headers});
+    this.http.put('https://family-project-4f904.firebaseio.com/photos.json', body, {headers: headers});
   }
-  fetchData(){
+  fetchData() {
     return this.http.get('https://family-project-4f904.firebaseio.com/photos.json')
       .map((response: Response) => response.json())
       .subscribe(
         (data: Photo[]) => {
-      this.photos = data;
-      this.photosChanged.emit(this.photos);
-    }
+          this.photos = data;
+          this.photosChanged.emit(this.photos);
+        }
       );
   }
 }

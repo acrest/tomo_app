@@ -9,7 +9,9 @@ import { PhotoServiceService } from "./photo-service.service"
 })
 export class PhotosComponent implements OnInit {
 
-
+ constructor(photoService: PhotoServiceService){
+   console.log("in photos component");
+ }
   ngOnInit() {
   }
 

@@ -10,9 +10,12 @@ import {Photo} from "../photo";
 })
 export class PhotoListComponent implements OnInit {
   photos: Photo[] = [];
-  constructor(private photoService: PhotoServiceService) { }
+  constructor(private photoService: PhotoServiceService) {
+
+  }
 
   ngOnInit() {
+    this.getPhotos();
     this.photos = this.photoService.getPhotos();
     this.photoService.photosChanged.subscribe(
       (photos: Photo[])=> this.photos = photos
