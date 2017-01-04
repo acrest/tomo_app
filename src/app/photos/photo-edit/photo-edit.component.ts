@@ -36,6 +36,14 @@ export class PhotoEditComponent implements OnInit {
           this.isNew = false;
           this.photoIndex = +params['id'];
           this.photo = this.photoService.getPhoto(this.photoIndex);
+          if(this.photo == null){
+            this.photo = {
+              name:"",
+              description:"",
+              imagePath:""
+            };
+            this.router.navigate(['/photos']);
+          }
         } else {
           this.isNew = true;
           this.photo = null;

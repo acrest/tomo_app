@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class PhotoServiceService {
   photosChanged = new EventEmitter<Photo[]>();
-  private photos: Photo[] = []
+  private photos: Photo[] = [];
   //  new Photo('Eden Back To School','Eden\'s picture for back to school Fall 2016', 'https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/13920942_10153777762794599_6398620272109907535_n.jpg?oh=beace499fd1d57fd17bc584fdfa0fb9b&oe=5922CCE2')
   //]
   constructor(private http: Http) { }
@@ -22,11 +22,12 @@ export class PhotoServiceService {
 
   deletePhoto(photo: Photo) {
     this.photos.splice(this.photos.indexOf(photo), 1);
+    this.storeData();
   }
 
   addPhoto(photo: Photo) {
-    this.http.put('https://family-project-4f904.firebaseio.com/photos/'+ this.photos.length +'.json',JSON.stringify(photo)).toPromise();
     this.photos.push(photo);
+    this.http.put('https://family-project-4f904.firebaseio.com/photos/'+ this.photos.indexOf(photo).toString() +'.json',JSON.stringify(photo)).toPromise();
   }
 
   editPhoto(oldPhoto: Photo, newPhoto: Photo) {
@@ -40,14 +41,16 @@ export class PhotoServiceService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    this.http.put('https://family-project-4f904.firebaseio.com/photos.json', body, {headers: headers});
+    this.http.put('https://family-project-4f904.firebaseio.com/photos.json', body, {headers: headers}).toPromise();
   }
   fetchData() {
     return this.http.get('https://family-project-4f904.firebaseio.com/photos.json')
       .map((response: Response) => response.json())
       .subscribe(
         (data: Photo[]) => {
-          this.photos = data;
+          if(!!data) {
+            this.photos = data;
+          }
           this.photosChanged.emit(this.photos);
         }
       );

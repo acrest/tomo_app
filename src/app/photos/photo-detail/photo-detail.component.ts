@@ -17,13 +17,17 @@ export class PhotoDetailComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private cruiseService: PhotoServiceService) {}
+              private photoService: PhotoServiceService) {}
 
   ngOnInit() {
     this.subscription = this.route.params.subscribe(
       (params: any) => {
         this.photoIndex = params['id'];
-        this.selectedPhoto = this.cruiseService.getPhoto(this.photoIndex);
+        this.selectedPhoto = this.photoService.getPhoto(this.photoIndex);
+        if(this.selectedPhoto == null){
+          this.router.navigate(['/photos']);
+          return;
+        }
       }
     );
   }
@@ -33,7 +37,7 @@ export class PhotoDetailComponent implements OnInit, OnDestroy {
   }
 
   onDelete() {
-    this.cruiseService.deletePhoto(this.selectedPhoto);
+    this.photoService.deletePhoto(this.selectedPhoto);
     this.router.navigate(['/photos']);
   }
 

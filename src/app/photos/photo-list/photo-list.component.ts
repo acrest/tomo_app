@@ -18,7 +18,11 @@ export class PhotoListComponent implements OnInit {
     this.getPhotos();
     this.photos = this.photoService.getPhotos();
     this.photoService.photosChanged.subscribe(
-      (photos: Photo[])=> this.photos = photos
+      (photos: Photo[])=> {
+        if(!!photos) {
+          this.photos = photos;
+        }
+      }
     );
   }
   // submitChanges(){

@@ -27,6 +27,7 @@ const APP_ROUTES: Routes = [
   {path: 'vacations/lake-powell', component: LakePowellComponent},
   {path: 'vacations/california', component: CaliforniaComponent},
   {path: 'events/b-a-wedding', component: BlakeAprilWeddingComponent}
+
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

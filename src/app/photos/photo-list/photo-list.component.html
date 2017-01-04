@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-md-12">
     <button class="btn btn-success" [routerLink]="['new']">New Photo</button>
@@ -5,7 +6,7 @@
     <!--<button class="btn" (click)="getPhotos()">Get Photos</button><p> Click Get Photos to see the photos</p>-->
   </div>
 </div>
-<div class="row">
+<div class="row" class="photo-list">
   <div class="col-xs-12">
     <ul class="list-group">
       <app-photo-item *ngFor="let photo of photos; let i = index" [photo]="photo" [photoID]="i"></app-photo-item>
