@@ -14,10 +14,16 @@ export class CruiseListComponent implements OnInit {
   constructor(private cruiseService: CruiseService) {}
 
   ngOnInit() {
+    this.cruiseService.fetchData();
     this.cruises = this.cruiseService.getCruises();
     this.cruiseService.cruiseChanged.subscribe(
-      (cruises: Cruise[]) => this.cruises = cruises
+      (cruises: Cruise[]) => {
+        if (!!cruises) {
+          this.cruises = cruises;
+        }
+      }
     );
   }
 
 }
+

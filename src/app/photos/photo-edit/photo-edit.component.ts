@@ -60,8 +60,9 @@ export class PhotoEditComponent implements OnInit {
     } else {
       this.photoService.editPhoto(this.photo, newPhoto);
     }
-    this.photoService.storeData();
-    this.router.navigate(['photos']);
+    this.photoService.storeData()
+      .then(success => {this.router.navigate(['photos']);},error => {this.router.navigate(['/photos/error'])} );;
+
   }
 
   onCancel() {

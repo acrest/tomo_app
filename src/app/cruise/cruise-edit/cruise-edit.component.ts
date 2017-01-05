@@ -36,6 +36,14 @@ export class CruiseEditComponent implements OnInit, OnDestroy {
           this.isNew = false;
           this.cruiseIndex = +params['id'];
           this.cruise = this.cruiseService.getCruise(this.cruiseIndex);
+          if(this.cruise == null){
+            this.cruise = {
+              name:"",
+              description:"",
+              imagePath:""
+            }
+            this.router.navigate(['/cruise']);
+          }
         } else {
           this.isNew = true;
           this.cruise = null;
@@ -52,11 +60,12 @@ export class CruiseEditComponent implements OnInit, OnDestroy {
     } else {
       this.cruiseService.editCruise(this.cruise, newCruise);
     }
-    this.navigateBack();
+    this.cruiseService.storeData();
+    this.router.navigate(['/cruise']);
   }
 
   onCancel() {
-    this.navigateBack();
+    this.router.navigate(['/cruise']);
   }
 
   ngOnDestroy() {

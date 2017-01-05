@@ -35,6 +35,7 @@ import { CruiseEditComponent } from './cruise/cruise-edit/cruise-edit.component'
 import {CruiseService} from "./cruise/cruise.service";
 import { PhotosStartComponent } from './photos/photos-start.component';
 import { PhotoDetailComponent } from './photos/photo-detail/photo-detail.component';
+import { ErrorPageComponent } from './photos/error-page.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { PhotoDetailComponent } from './photos/photo-detail/photo-detail.compone
     CruiseStartComponent,
     CruiseEditComponent,
     PhotosStartComponent,
-    PhotoDetailComponent
+    PhotoDetailComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
