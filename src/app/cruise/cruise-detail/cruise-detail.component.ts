@@ -37,6 +37,10 @@ export class CruiseDetailComponent implements OnInit, OnDestroy {
     this.router.navigate(['vacations/cruise']);
   }
 
+  isAuth(){
+    return this.cruiseService.isAuth();
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

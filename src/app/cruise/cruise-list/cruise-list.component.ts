@@ -24,6 +24,9 @@ export class CruiseListComponent implements OnInit {
       }
     );
   }
+  isAuth(){
+    return this.cruiseService.isAuth();
+  }
 
 }
 

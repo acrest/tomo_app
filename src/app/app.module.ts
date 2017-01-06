@@ -36,6 +36,13 @@ import {CruiseService} from "./cruise/cruise.service";
 import { PhotosStartComponent } from './photos/photos-start.component';
 import { PhotoDetailComponent } from './photos/photo-detail/photo-detail.component';
 import { ErrorPageComponent } from './photos/error-page.component';
+import { SigninComponent } from './signin.component';
+import {AuthService} from "./auth.service";
+import { WeddingDetailComponent } from './blake-april-wedding/wedding-detail/wedding-detail.component';
+import { WeddingEditComponent } from './blake-april-wedding/wedding-edit/wedding-edit.component';
+import { WeddingListComponent } from './blake-april-wedding/wedding-list/wedding-list.component';
+import { WeddingItemComponent } from './blake-april-wedding/wedding-list/wedding-item.component';
+import { WeddingStartComponent } from './blake-april-wedding/wedding-start.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +75,13 @@ import { ErrorPageComponent } from './photos/error-page.component';
     CruiseEditComponent,
     PhotosStartComponent,
     PhotoDetailComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    SigninComponent,
+    WeddingDetailComponent,
+    WeddingEditComponent,
+    WeddingListComponent,
+    WeddingItemComponent,
+    WeddingStartComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +90,7 @@ import { ErrorPageComponent } from './photos/error-page.component';
     HttpModule,
     routing
   ],
-  providers: [PhotoServiceService, CruiseService],
+  providers: [PhotoServiceService, CruiseService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

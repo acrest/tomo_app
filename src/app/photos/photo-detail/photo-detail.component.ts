@@ -36,6 +36,10 @@ export class PhotoDetailComponent implements OnInit, OnDestroy {
     this.router.navigate(['/photos', this.photoIndex, 'edit']);
   }
 
+  isAuth(){
+    return this.photoService.isAuth();
+  }
+
   onDelete() {
     this.photoService.deletePhoto(this.selectedPhoto);
     this.router.navigate(['/photos']);

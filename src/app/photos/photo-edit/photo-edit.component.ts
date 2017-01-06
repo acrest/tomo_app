@@ -53,6 +53,10 @@ export class PhotoEditComponent implements OnInit {
     );
   }
 
+  isAuth(){
+    return this.photoService.isAuth();
+  }
+
   onSubmit() {
     const newPhoto = this.photoForm.value;
     if (this.isNew) {

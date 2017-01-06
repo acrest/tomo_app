@@ -14,6 +14,7 @@ import { CRUISE_ROUTES } from "./cruise/cruise.routes"
 import {CruiseComponent} from "./cruise/cruise.component";
 import {PHOTOS_ROUTES} from "./photos/photos.routes";
 import {PhotosComponent} from "./photos/photos.component";
+import {SigninComponent} from "./signin.component";
 
 const APP_ROUTES: Routes = [
   {path: 'members', component: MembersComponent},
@@ -26,7 +27,8 @@ const APP_ROUTES: Routes = [
   {path: 'vacations/cruise', component: CruiseComponent, children: CRUISE_ROUTES},
   {path: 'vacations/lake-powell', component: LakePowellComponent},
   {path: 'vacations/california', component: CaliforniaComponent},
-  {path: 'events/b-a-wedding', component: BlakeAprilWeddingComponent}
+  {path: 'events/b-a-wedding', component: BlakeAprilWeddingComponent},
+  {path: 'signin', component: SigninComponent}
 
 ];
 

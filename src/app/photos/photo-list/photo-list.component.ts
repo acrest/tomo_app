@@ -35,4 +35,8 @@ export class PhotoListComponent implements OnInit {
     this.photoService.fetchData();
   }
 
+  isAuth(){
+    return this.photoService.isAuth();
+  }
+
 }
