@@ -37,11 +37,11 @@ export class CruiseService {
 
   addCruise(cruise: Cruise) {
     this.cruises.push(cruise);
-    this.http.put('https://family-project-4f904.firebaseio.com/vacations/cruise/'+ this.cruises.indexOf(cruise).toString() +'.json',JSON.stringify(cruise)).toPromise();
+    this.http.put('https://projects-6a8af.firebaseio.com/vacations/cruise/'+ this.cruises.indexOf(cruise).toString() +'.json',JSON.stringify(cruise)).toPromise();
   }
 
   editCruise(oldCruise: Cruise, newCruise: Cruise){
-    this.http.patch('https://family-project-4f904.firebaseio.com/vacations/cruise/'+this.cruises.indexOf(oldCruise)+'/.json',JSON.stringify(newCruise)).toPromise();
+    this.http.patch('https://projects-6a8af.firebaseio.com/vacations/cruise/'+this.cruises.indexOf(oldCruise)+'/.json',JSON.stringify(newCruise)).toPromise();
     this.cruises[this.cruises.indexOf(oldCruise)] = newCruise;
   }
 
@@ -50,11 +50,11 @@ export class CruiseService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    return this.http.put('https://family-project-4f904.firebaseio.com/vacations/cruise.json', body, {headers: headers}).toPromise();
+    return this.http.put('https://projects-6a8af.firebaseio.com/vacations/cruise.json', body, {headers: headers}).toPromise();
   }
 
   fetchData() {
-    return this.http.get('https://family-project-4f904.firebaseio.com/vacations/cruise.json')
+    return this.http.get('https://projects-6a8af.firebaseio.com/vacations/cruise.json')
       .map((response: Response) => response.json())
       .subscribe(
         (data: Cruise[]) => {

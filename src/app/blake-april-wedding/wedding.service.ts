@@ -37,11 +37,11 @@ export class WeddingService {
 
   addWedding(wedding: Wedding) {
     this.weddings.push(wedding);
-    this.http.put('https://family-project-4f904.firebaseio.com/events/b-a-wedding/'+ this.weddings.indexOf(wedding).toString() +'.json',JSON.stringify(wedding)).toPromise();
+    this.http.put('https://projects-6a8af.firebaseio.com/events/b-a-wedding/'+ this.weddings.indexOf(wedding).toString() +'.json',JSON.stringify(wedding)).toPromise();
   }
 
   editWedding(oldWedding: Wedding, newWedding: Wedding){
-    this.http.patch('https://family-project-4f904.firebaseio.com/events/b-a-wedding/'+this.weddings.indexOf(oldWedding)+'/.json',JSON.stringify(newWedding)).toPromise();
+    this.http.patch('https://projects-6a8af.firebaseio.com/events/b-a-wedding/'+this.weddings.indexOf(oldWedding)+'/.json',JSON.stringify(newWedding)).toPromise();
     this.weddings[this.weddings.indexOf(oldWedding)] = newWedding;
   }
 
@@ -50,11 +50,11 @@ export class WeddingService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    return this.http.put('https://family-project-4f904.firebaseio.com/events/b-a-wedding.json', body, {headers: headers}).toPromise();
+    return this.http.put('https://projects-6a8af.firebaseio.com/events/b-a-wedding.json', body, {headers: headers}).toPromise();
   }
 
   fetchData() {
-    return this.http.get('https://family-project-4f904.firebaseio.com/events/b-a-wedding.json')
+    return this.http.get('https://projects-6a8af.firebaseio.com/events/b-a-wedding.json')
       .map((response: Response) => response.json())
       .subscribe(
         (data: Wedding[]) => {

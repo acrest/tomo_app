@@ -43,6 +43,15 @@ import { WeddingEditComponent } from './blake-april-wedding/wedding-edit/wedding
 import { WeddingListComponent } from './blake-april-wedding/wedding-list/wedding-list.component';
 import { WeddingItemComponent } from './blake-april-wedding/wedding-list/wedding-item.component';
 import { WeddingStartComponent } from './blake-april-wedding/wedding-start.component';
+import { VideosComponent } from './videos/videos.component';
+import { VideoDetailComponent } from './videos/video-detail/video-detail.component';
+import { VideoEditComponent } from './videos/video-edit/video-edit.component';
+import { VideoListComponent } from './videos/video-list/video-list.component';
+import { VideoItemComponent } from './videos/video-list/video-item.component';
+import { VideoStartComponent } from './videos/video-start.component';
+import { VideoService } from './videos/video.service';
+import { VideoErrorPageComponent } from './videos/video-error-page.component';
+import { SafePipe } from './videos/video-detail/video-detail.component'
 
 @NgModule({
   declarations: [
@@ -76,12 +85,21 @@ import { WeddingStartComponent } from './blake-april-wedding/wedding-start.compo
     PhotosStartComponent,
     PhotoDetailComponent,
     ErrorPageComponent,
+    VideoErrorPageComponent,
     SigninComponent,
     WeddingDetailComponent,
     WeddingEditComponent,
     WeddingListComponent,
     WeddingItemComponent,
-    WeddingStartComponent
+    WeddingStartComponent,
+    VideosComponent,
+    VideoDetailComponent,
+    VideoEditComponent,
+    VideoListComponent,
+    VideoItemComponent,
+    VideoStartComponent,
+    SafePipe
+
   ],
   imports: [
     BrowserModule,
@@ -90,7 +108,7 @@ import { WeddingStartComponent } from './blake-april-wedding/wedding-start.compo
     HttpModule,
     routing
   ],
-  providers: [PhotoServiceService, CruiseService, AuthService],
+  providers: [PhotoServiceService, CruiseService, AuthService, VideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

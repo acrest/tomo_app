@@ -13,8 +13,11 @@ import {BlakeAprilWeddingComponent} from './blake-april-wedding/blake-april-wedd
 import { CRUISE_ROUTES } from "./cruise/cruise.routes"
 import {CruiseComponent} from "./cruise/cruise.component";
 import {PHOTOS_ROUTES} from "./photos/photos.routes";
+import {VIDEOS_ROUTES} from "./videos/videos.routes";
 import {PhotosComponent} from "./photos/photos.component";
 import {SigninComponent} from "./signin.component";
+import { VideosComponent } from "./videos/videos.component";
+import { VideoEditComponent } from "./videos/video-edit/video-edit.component";
 
 const APP_ROUTES: Routes = [
   {path: 'members', component: MembersComponent},
@@ -28,7 +31,9 @@ const APP_ROUTES: Routes = [
   {path: 'vacations/lake-powell', component: LakePowellComponent},
   {path: 'vacations/california', component: CaliforniaComponent},
   {path: 'events/b-a-wedding', component: BlakeAprilWeddingComponent},
-  {path: 'signin', component: SigninComponent}
+  {path: 'signin', component: SigninComponent},
+  { path: 'videos/new', component: VideoEditComponent },
+  {path: 'videos', component: VideosComponent, children: VIDEOS_ROUTES}
 
 ];
 

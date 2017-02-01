@@ -10,5 +10,5 @@ import { TitleComponent } from './title.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to the Crestani Family Web Page!';
+  title = 'Hi! My name is Gabe.  I like to build stuff.  This is my page.  Enjoy!';
 }
